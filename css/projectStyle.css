@@ -1,0 +1,213 @@
+.accordion .card-header:after {
+    font-family: 'FontAwesome';
+    content: "\f068";
+    float: right;
+}
+
+.accordion .card-header.collapsed:after {
+    content: "\f067";
+}
+
+
+.row .col {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.row #columnn .box .imgBox {
+    position: relative;
+    overflow: hidden;
+}
+
+.row #columnn .box .imgBox img {
+    max-width: 100%;
+    transition: transform 2s;
+}
+
+.row #columnn .box:hover .imgBox img {
+    transform: scale(1.2);
+}
+
+.row #columnn .box .details {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    bottom: 10px;
+    right: 10px;
+    background: rgba(0, 0, 0, 0.4);
+    transform: scaleY(0);
+    transition: transform .5s;
+}
+
+.row #columnn .box:hover .details {
+    transform: scaleY(1);
+}
+
+.row #columnn .box .details .content {
+    position: absolute;
+
+
+    text-align: center;
+    padding: 35px;
+    color: #fff;
+}
+
+.row #columnn .box .details .content h2 {
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
+    color: #fff;
+}
+
+.row #columnn .box .details .content p {
+    margin: 10px 0 0;
+    padding: 0;
+}
+
+.row #columnn .box .details .content2 {
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    text-align: center;
+}
+
+#githubIcon {
+    margin-top: -10px;
+    margin-bottom: -10px;
+    padding-left: 30px;
+    padding-right: 30px;
+    font-size: 3rem;
+    color: #25274d;
+
+}
+
+#githubButton {
+    padding-top: -67px;
+    border: none;
+    border-radius: 30px;
+    margin-right: 20px;
+
+}
+
+#githubButton:hover {
+    background: #25274d;
+}
+
+#githubButton:hover #githubIcon {
+    color: #f4f4f4;
+}
+
+#googleplay {
+    margin-top: -10px;
+    margin-bottom: -10px;
+    padding-left: 50px;
+    padding-right: 45px;
+    font-size: 3rem;
+    color: #25274d;
+
+}
+
+#googleplayButton {
+    padding-top: -67px;
+    border: none;
+    border-radius: 30px;
+    margin-right: 20px;
+}
+
+#googleplayButton:hover {
+    background: #25274d;
+}
+
+#googleplayButton:hover #googlePlay {
+    color: #f4f4f4;
+}
+
+.su-youtube {
+    margin: 0 auto;
+    display: block;
+}
+
+.item img {
+    width: 100%;
+    height: auto
+}
+
+.carousel-inner img {
+    margin: auto;
+}
+
+#youtubeVideo {}
+
+/*---Media Queries --*/
+
+@media (max-width: 992px) {
+    #youtubeVideo {
+        width: 80%;
+
+    }
+}
+
+@media (max-width: 768px) {
+    #youtubeVideo {
+        width: 85%;
+        height: 80%;
+
+    }
+}
+
+@media (max-width: 576px) {
+     .gitgoogButtons{
+        margin-left:10px;
+    }
+    #youtubeVideo {
+        width: 100% ;
+        height: 70%;
+
+    }
+  
+    .playButton{
+        font-size: 2rem !important;
+    }
+}
+@media (max-width: 376px) {
+    #githubIcon {
+        font-size: 2.5rem;
+    }
+    #googleplay {
+        font-size: 2.5rem;
+    }
+    .gitgoogButtons{
+        margin-left:8px;
+    }
+}
+@media (max-width: 360px) {
+    #githubIcon {
+        font-size: 2.5rem;
+        padding-left: 20px;
+    padding-right: 20px;
+    }
+    #googleplay {
+        font-size: 2.5rem;
+        padding-left: 40px;
+    padding-right: 35px;
+    }
+    .gitgoogButtons{
+        margin-left:8px;
+    }
+}
+
+@media (max-width: 320px) {
+    .gitgoogButtons{
+        margin-left:15px;
+    }
+    #githubIcon {
+        font-size: 2rem;
+        padding-left: 20px;
+    padding-right: 20px;
+    }
+    #googleplay {
+        font-size: 2rem;
+        padding-left: 40px;
+    padding-right: 35px;
+    }
+}

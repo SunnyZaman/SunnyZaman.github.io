@@ -1,0 +1,183 @@
+
+
+        .playButton {
+            background: white;
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+            transition: box-shadow 0.3s ease-in-out;
+        }
+
+        /* Transition to a bigger shadow on hover */
+
+        .playButton:hover {
+            color: white;
+            background: purple;
+            -webkit-transition: background 1000ms linear;
+            -ms-transition: background 1000ms linear;
+            transition: background 1000ms linear;
+            box-shadow: 0 5px 15px rgba(222, 222, 222, 1);
+        }
+
+        #myProgress {
+            width: 100%;
+            background-color: #ddd;
+        }
+
+        #myBar {
+            width: 100%;
+            height: 30px;
+            background-color: #910722;
+        }
+
+        #enterButton {
+            color: purple;
+            background: white;
+            border: 2px solid purple;
+        }
+
+        #enterButton:hover {
+            color: white;
+            background: purple;
+
+        }
+
+
+        #gameContainer {
+
+            width: 100%;
+            height: 100%;
+            display: table;
+        }
+
+        #gameContainer #rowlogo {
+            display: table-row;
+        }
+
+        #gameContainer #rownav {
+            display: table-row;
+        }
+
+        #gameContainer #rowbase {
+
+
+            display: table-row;
+        }
+
+        #gameContainer #cell {
+            display: table-cell;
+        }
+
+        #rowlogo #cell {
+            vertical-align: top;
+        }
+
+        #rownav #cell {
+            vertical-align: middle;
+        }
+
+        #rowbase #cell {
+
+            vertical-align: middle;
+            padding-top: 0px;
+        }
+
+        #score,
+        #timer {
+
+            font-size: 4rem;
+            color: purple;
+        }
+
+        #answers {
+            text-align: center;
+            font-size: 1.5rem;
+            color: #267c09;
+        }
+
+        #listItem {
+            display: inline;
+
+            padding-right: 30px;
+        }
+
+        #UlAnswers {
+            color: #aa1f12;
+            font-size: 1.5rem;
+            text-align: center;
+
+        }
+
+        #UlAnswers li {
+            display: inline;
+
+            padding-right: 30px;
+        }
+
+        #mText {
+            font-weight: bold;
+            font-size: 1.7rem;
+        }
+
+@media (max-width: 992px) {
+    #youtubeVideo {
+        width: 80%;
+
+    }
+    #containerClass {
+        width: 80% !important;
+
+    }
+    .playButton{
+        font-size: 3.6rem !important;
+    }
+}
+
+@media (max-width: 768px) {
+    #youtubeVideo {
+        width: 85%;
+        height: 80%;
+
+    }
+     #containerClass {
+        width: 85% !important;
+        height: 80% !important;
+    }
+    .playButton{
+        font-size: 3rem !important;
+    }
+}
+
+@media (max-width: 576px) {
+    
+    #score{
+        font-size: 3rem;
+    }
+    #answers {
+        font-size: 1rem;
+    }
+    #ulAnswers{
+        font-size: 1.2rem;
+    }
+    #containerClass {
+        width: 100% !important;
+        height: 70% !important;
+    }
+    .playButton{
+        font-size: 2.5rem !important;
+    }
+}
+@media (max-width: 376px) {
+    .playButton{
+        font-size: 2rem !important;
+    }
+}
+@media (max-width: 360px) {
+    .playButton{
+        font-size:1.5rem !important;
+    }
+}
+
+@media (max-width: 320px) {
+     .playButton{
+        font-size: 1rem !important;
+    }
+}

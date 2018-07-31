@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title> Sunny's Portfolio</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+
+<link rel="icon" href="images/logo.png">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/chatbot.css" rel="stylesheet">
+    <script type="text/javascript" src="javascript/typed.js"></script>
+<script type="text/javascript" src="javascript/chatbot.js"></script>
+</head>
+
+<body>
+
+    
+
+    <div class="clickMe" id="clickMe">
+        <img src="images/img_avatar.png" id="avatar" alt="Avatar">
+        <button type="button" id="onlineStatus"><i class=""></i></button>
+    </div>
+    <div class="chatbox" id="thebutton">
+        <!--<button type="button"  class="btn btn-success btn-circle"><i class=""></i></button>-->
+        <button id="x" type="button">
+            X
+        </button>
+
+        <script>
+            document.getElementById("avatar").onclick = function() {
+                document.getElementById("thebutton").style.visibility = "visible";
+                document.getElementById("thebutton").style.opacity = "1";
+
+
+                /* document.getElementById("textbox").disabled = true; */
+                document.getElementById("clickMe").style.visibility = "hidden";
+                chatapp();
+                return true;
+            }
+            document.getElementById("x").onclick = function() {
+                document.getElementById("thebutton").style.visibility = "hidden";
+                document.getElementById("clickMe").style.visibility = "visible";
+                document.getElementById("thebutton").style.opacity = "0";
+
+                document.getElementById("thebutton").style.transition = "visibility 0.3s linear,opacity 0.3s linear";
+                return true;
+            }
+        </script>
+
+
+
+
+
+
+        <div class="chatlogs" id="textarea_id">
+
+            
+            <!--<ul id="messages"></ul>-->
+        </div>
+
+        <div class="chat-form" id="chatform">
+            <input id="textbox" type="text">
+            <button id="button">Send</button>
+            <script type="text/javascript">
+               
+            </script>
+        </div>
+    </div>
+    <!-- Navigation Bar-->
+    <nav class="navbar navbar-expand-md navbar-light bg-light sticky-top" style="position: fixed;width:100%;"id="mainbar">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html"><img src="images/logo.png" id="logo"></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="index.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="projects.html">Projects</a>
+                        <!--<ul>
+                            <li>
+                                <a href="projects.html#collapseOne">Web Games</a>
+                            </li>
+                            <li>
+                                <a href="projects.html#collapseTwo">Mobile Games</a>
+                            </li>
+                            <li>
+                                <a href="projects.html#collapseThree">Cinema 4D</a>
+                            </li>
+                        </ul>-->
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!--<script>
+        window.onload = function() {
+
+            document.onscroll = function() {
+                console.log("You can see this");
+                myFunction("jumtron")
+            }
+        }
+
+
+        function myFunction(el) {
+
+            var header = document.getElementById(el);
+            var sticky = header.offsetTop;
+
+            if (window.pageYOffset >= sticky) {
+                document.getElementById("mainbar").style.border = "2px solid black";
+            } else {
+                document.getElementById("mainbar").style.border = "2px solid blue";
+            }
+        }
+    </script>-->
+    
+    <!--Image Landing Page-->
+    <div id="home">
+     <div class="landing-text">
+         <div class="typing">
+         <p>Hi, I am a <span id="type2"></span></p>
+    </div>
+         <div id="typed-strings">
+                <p>Programmer</p>
+                <p>Developer</p>
+                <p>Designer</p>
+            </div>
+         <script>
+                $('document').ready(function() {
+                    var typed = new Typed('#type2', {
+
+                        stringsElement: '#typed-strings',
+                        loop: true,
+                        loopCount: Infinity,
+                        typeSpeed: 40,
+                        backSpeed: 40
+                    })
+                });
+            </script>
+            <h1>Sunny Zaman</h1>
+        </div>
+    </div>
+   
+
+
+    <!--Two Column Section -->
+    <div class="container-fluid padding" style="padding-left: 50px; padding-right: 50px">
+        <div class="row padding">
+            <div class="col-lg-6">
+                <h1>About Me</h1>
+                <p>Hi, I'm Sunny, a fourth year Computer Science student at Ryerson University. I am a full stack developer.</p>
+                <p>I have done work in mobile app creation, front-end/back-end web, graphic design, and video game development.</p>
+                <p>I have developed products for Ryerson University, such as: <a href="myprojects/formlimiter.html">Form Limiter</a> and <a href="myprojects/nutritionpdfemailer.html">Nutrition PDF Emailer</a><p>
+                <a href="resume.html">
+                <button class="btn btn-lg" id="myResumeButton">View My Resume</button>
+                  </a>
+            </div>
+            <div class="col-lg-6">
+                <img src="images/computer.jpg" class="img-fluid">
+            </div>
+        </div>
+    </div>
+    <hr class="my-4">
+    <!--Welcome Screen-->
+    <div class="container-fluid padding">
+        <div class="row welcome text-center">
+            <div class="col-12">
+                <h1 class="display-4">
+                    Connect
+                </h1>
+                <hr>
+            </div>
+
+            <div class="col-12">
+
+                <p class="lead"> Stay connected with me and let's collaborate</p>
+            </div>
+        </div>
+    </div>
+    <!--Three Column Section-->
+    <div class="sontainer-fluid padding">
+        <div class="row text-center padding">
+            <div class="col-xs-12 col-sm-6 col-md-4" id="connectSection">
+                <a href="https://github.com/SunnyZaman">
+                <i class="fab fa-github"></i>
+
+                <h3>GitHub</h3>
+                <p>Collaborate with me by using GitHub.</p>
+                </a>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-4" id="connectSection">
+               <a href="https://www.youtube.com/channel/UC9AcLvZJESt1H7DqJVFaAog">
+                <i class="fab fa-youtube"></i>
+
+                <h3>Youtube</h3>
+                <p>Interact with me by using Gmail.</p>
+                </a>
+            </div>
+            <div class="col-sm-12 col-md-4" id="connectSection">
+               <a href="https://www.linkedin.com/in/sunny-zaman-24890a86/">
+                <i class="fab fa-linkedin"></i>
+
+                <h3>LinkedIn</h3>
+                <p>Connect with me by using LinkedIn.</p>
+            </a>
+            </div>
+        </div>
+        <hr class="my-4">
+    </div>
+
+
+    <!--Footer-->
+    <footer>
+        <div class="container-fluid padding">
+            <div class="row text-center">
+                <div class="col-md-4">
+                    <a href="index.html">
+                    <img src="images/logo.png">
+                    </a>
+                    <hr class="light">
+
+                    <p>sunnyjozaman@gmail.com</p>
+                </div>
+                <div class="col-md-4">
+                    <hr class="light">
+                    <h5>Affiliations</h5>
+                    <hr class="light">
+                    <p>Ryerson University</p>
+
+                </div>
+
+                <div class="col-md-4">
+                    <hr class="light">
+                    <h5>Location</h5>
+                    <hr class="light">
+                    <p>350 Victoria St, Toronto, ON M5B 2K3</p>
+
+                </div>
+                <div class="col-12">
+                    <hr class="light-100">
+                    <h5>&copy github.io/SunnyZaman</h5>
+                </div>
+            </div>
+
+        </div>
+
+    </footer>
+
+</body>
+
+</html>
