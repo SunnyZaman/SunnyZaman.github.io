@@ -1,6 +1,6 @@
 .accordion .card-header:after {
     font-family: 'FontAwesome';
-    content: "\f067";
+    content: "\2012";
     float: right;
 }
 
