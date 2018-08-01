@@ -1,11 +1,11 @@
 
-.accordion .card-header:after::before {
+.accordion .card-header:after {
     
     content: "+";
     float: right;
 }
 
-.accordion .card-header.collapsed:after::before {
+.accordion .card-header.collapsed:after {
     content: "-";
 }
 
