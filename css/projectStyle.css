@@ -1,12 +1,12 @@
 
 .accordion .card-header:after {
-    
-    content: "+";
+    font-weight: bold;
+    content: "-";
     float: right;
 }
 
 .accordion .card-header.collapsed:after {
-    content: "-";
+    content: "+";
 }
 
 
