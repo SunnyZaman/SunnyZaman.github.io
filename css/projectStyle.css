@@ -1,12 +1,12 @@
 
 .accordion .card-header:after {
     
-    content: "\2701";
+    content: "+";
     float: right;
 }
 
 .accordion .card-header.collapsed:after {
-    content: "\f067";
+    content: "-";
 }
 
 
