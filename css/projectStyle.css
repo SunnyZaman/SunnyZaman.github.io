@@ -1,7 +1,7 @@
-@import url("https://use.fontawesome.com/releases/v5.2.0/css/all.css");
+
 .accordion .card-header:after {
-    font-family: 'FontAwesome';
-    content: "\f068";
+    
+    content: "\2701";
     float: right;
 }
 
