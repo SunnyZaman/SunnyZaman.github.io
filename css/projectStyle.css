@@ -1,5 +1,6 @@
 .accordion .card-header:before {
     float: right;
+    font-weight:bold;
     content: "-";
 }
 
