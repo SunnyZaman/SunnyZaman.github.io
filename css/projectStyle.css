@@ -1,10 +1,10 @@
 .accordion .card-header:before {
     float: right;
-    content: "+";
+    content: "-";
 }
 
 .accordion .card-header.collapsed:before {
-    content: "-";
+    content: "+";
 }
 
 
