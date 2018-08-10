@@ -1,5 +1,5 @@
 .accordion .card-header {
-    content: "+";
+    content: "-";
     float: right;
 }
 
