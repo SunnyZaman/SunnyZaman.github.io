@@ -1,0 +1,228 @@
+*{
+    box-sizing:border-box;
+}
+html, body{
+    height:100%;
+    overflow:hidden;
+    margin:0;
+    padding:0;
+    
+}
+
+.page{
+    height:100%;
+    background-color: #e9ecef;
+    color: gray;
+}
+
+.content{
+    height:200%;
+    transform-origin:top left;
+    transition: transform 0.7s cubic-bezier(1,0.005, 0.24, 1),
+     -webkit-transform 0.7s cubic-bezier(1,0.005,0.24,1);
+    background-color: #fff;
+}
+
+.content_inner{
+    height:50%;
+    overflow-y:auto;
+    padding:100px 10%; /*20%*/
+        line-height:30px;
+}
+
+.menu_toggle{
+    z-index:900;
+    position:fixed;
+    top:0;
+    left:0;
+    display:block;
+    cursor: pointer;
+    width:100px;
+    height:80px;
+    background-color: #25274d;
+    border-bottom-right-radius: 100%;
+}
+
+.menu_toggle:active i{
+    opacity:0.8;
+}
+
+
+.menu_toggle i{
+    color:#f0f0f0;
+}
+
+.menu_toggle .menu_open,
+.menu_toggle .menu_close{
+    position:absolute;
+    top:50%;
+    left:50%;
+    margin-top:-15px;
+    margin-left:-12px;
+    transition: transform 0.7s cubic-bezier(1,0.005, 0.25, 1),
+     -webkit-transform 0.7s cubic-bezier(1,0.005,0.25,1);
+}
+
+.menu_toggle .menu_open{
+    transform-origin: -100px -100px;
+}
+
+.menu_toggle .menu_close{
+    transform: rotate(20deg);
+    transform-origin:-100px -160px;
+}
+
+.menu_items{
+    position:fixed;
+    bottom:0;
+    left:50px;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.menu_items li{
+    height: 60px;
+    margin-bottom: 30px;
+    transform: translateX(-300px);
+     transition: transform 0.7s 0s cubic-bezier(1,0.005, 0.24, 1),
+     -webkit-transform 0.7s 0s cubic-bezier(1,0.005,0.24,1);
+}
+
+.menu_items li:nth-child(2){
+    margin-left:40px;
+}
+.menu_items li:nth-child(3){
+    margin-left:80px;
+}
+
+
+.menu_items a{
+    display: block;
+    text-decoration: none;
+text-transform: uppercase;
+    letter-spacing: 2px;
+    color:gray;
+    transition:color -.2s;
+}
+
+.menu_items a:hover{
+    color:black;
+    
+}
+.shazam .content{
+    transform: rotate(-30deg);
+}
+
+.shazam .menu_open{
+    transform: rotate(-20deg);
+}
+.shazam .menu_close{
+    transform:rotate(0);
+}
+
+.shazam .menu_items li{
+    transform: translateX(0);
+    transition: transform 0.35s 0.45s cubic-bezier(0.125,0.885, 0.32, 1.275),
+     -webkit-transform 0.35s 0.45scubic-bezier(0.125,0.885, 0.32, 1.275),
+}
+
+.shazam .menu_items li:nth-child(2){
+    transition-delay: :.47s;
+}
+
+.shazam .menu_items li:nth-child(3){
+    transition-delay: :.48s;
+}
+
+#download{
+   
+}
+#buttonA{
+    color:white;
+    background:#25274d;
+    border:2px solid white; 
+    width:200px; 
+    height:50px; 
+    position:relative; 
+    float:right;
+     font-size: 1.2rem;
+}
+
+#buttonA:hover{
+    
+    border:2px solid #25274d !important;
+    color:#25274d !important;
+    background: white !important;
+}
+#buttonA:focus{
+    background-color:#f2f2f2 !important;
+    color:black !important;
+}
+#buttonA:hover .fa-download{
+    color:#25274d;
+}
+#buttonA:focus .fa-download{
+    color:#25274d;
+}
+.fa-download{
+    color:white;
+}
+body{
+    color:gray;
+}
+.name{
+    font-size: 4rem;
+}
+.info{
+    padding-top: 15px;
+    padding-bottom: 16px;
+    font-size: 2rem;
+    border-bottom:  1px solid #ddd;
+}
+.infoButtons{
+    color:gray;
+    padding:10px;
+    font-size: 1.2rem;
+    border-top: none;
+    border-bottom: none;
+    border-right: none;
+    background: white;
+}
+.infoButtonNoBorder{
+    color:gray;
+     padding:10px;
+    font-size: 1.2rem;
+    border:none;
+    background: white;
+}
+.infoButtons:hover{
+    color:white;
+    background: #25274d;
+}
+.infoButtonNoBorder:hover{
+    color:white;
+    background: #25274d;
+}
+#mobDates{
+    color:black;
+    display:none;
+}
+ #hideDatesMob{
+     color: black;
+}
+@media (max-width: 576px) {
+    .infoButtonNoBorder{
+        border-left: 2px solid #e0e0e0;
+    }
+    #buttonA{
+        display: none;
+    }
+    #mobDates{
+    display:block;
+    font-style: italic;
+}
+    #hideDatesMob{
+        display: none;
+    }
+}

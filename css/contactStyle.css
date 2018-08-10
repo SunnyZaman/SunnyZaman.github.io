@@ -1,0 +1,42 @@
+
+
+
+
+.contact .input-group{
+    margin-bottom: 25px;
+}
+
+.contact .form-control{
+    border-radius: 0 !important;
+}
+.contact span{
+    border-radius: 0 !important;
+}
+
+.contact .btn{
+    border-radius: 0;
+    width:100%;
+    font-size: 15px;
+    background: #25274d;
+    color:white;
+}
+
+.contact .btn:hover{
+    background: black;
+    color: white !important;
+}
+#user{
+    margin:1rem;
+  font-size: 2rem;
+    color: #25274d;
+}
+#mail{
+    margin:1rem;
+    font-size: 2rem;
+    color:#25274d;
+}
+#subject{
+    margin:1rem;
+    color: #25274d;
+    font-size: 2rem;
+}

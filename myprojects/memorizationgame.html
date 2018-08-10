@@ -1,0 +1,478 @@
+<!Doctype>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title> Sunny | Memorization Game</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <link rel="icon" href="../images/logo.png">
+
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+    <link href="../css/style.css" rel="stylesheet">
+    <link href="../css/projectStyle.css" rel="stylesheet">
+    <link href="../css/memoryStyle.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+
+
+</head>
+
+<body>
+    <!-- Navigation Bar-->
+    <nav class="navbar navbar-expand-md navbar-light bg-light sticky-top" id="mainbar">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="../index.html"><img src="../images/logo.png" id="logo"></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html">About</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="../projects.html">Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../contact.html">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!--Welcome Screen-->
+    <div class="container-fluid padding">
+        <div class="row welcome text-center">
+            <div class="col-12">
+                <h1 class="display-4">
+                    Memorization game
+                </h1>
+                <hr>
+            </div>
+
+            <div class="col-12">
+
+                <p class="lead"> An easy and fun game to sharpen your mind</p>
+            </div>
+        </div>
+    </div>
+    <div class="container" id="containerClass" style="width:70%;height:90%; text-align:center; display: table; background: #f4f4f4">
+        <div class="container2" id="container2Class" style="margin-left:60px; margin-right: 60px;display: table-cell;vertical-align:middle; background-image: url('../images/projects/memorygame/brain.png'); background-repeat: no-repeat;background-position: center; background-size: 50%">
+            <!--Game container-->
+
+            <div class="logo" id="theLogo" style="">
+                <button class="playButton" style="border:none;width:30%;font-size:5rem;border-radius:15px;" onclick="imageDisplay();scrollToGame()"> <strong>PLAY</strong></button>
+            </div>
+            <script>
+                //Variables for Game score 
+                var cakebool = 0;
+                var hotdogbool = 0;
+                var icecreambool = 0;
+                var pizzabool = 0;
+                var applebool = 0;
+                var bananabool = 0;
+                var coconutbool = 0;
+                var eggbool = 0;
+                var fishbool = 0;
+                var sushibool = 0;
+                var score = 0;
+                var canList = 1;
+
+                function scrollToGame() {
+                    console.log("Is it working")
+                    $('html, body').animate({
+                        scrollTop: $('#myProgress').offset().top - 100
+                    }, 'slow');
+                    return false;
+
+                }
+
+                function imageDisplay() {
+                    var progress = document.createElement("div");
+                    progress.id = "myProgress";
+                    var bar = document.createElement("div");
+                    bar.id = "myBar";
+                    var containerBack = document.getElementById("containerClass");
+                    var container2 = document.getElementById("container2Class");
+                    progress.appendChild(bar);
+                    container2.appendChild(progress);
+                    container2.style.backgroundImage = "";
+                    var logo = document.getElementById("theLogo");
+                    logo.remove();
+                    container2.style.backgroundImage = "url('../images/projects/memorygame/foods.png')";
+                    container2.style.backgroundSize = "100%";
+                    container2.style.verticalAlign = "";
+                    var elem = document.getElementById("myBar");
+                    var width = 100;
+                    var id = setInterval(frame, 10);
+
+                    function frame() {
+                        if (width < 0) {
+                            clearInterval(id);
+                            startGame();
+
+                        } else {
+                            width = width - 0.15;
+                            elem.style.width = width + '%';
+                        }
+                    }
+                }
+
+                function startGame() {
+                    var containerBack = document.getElementById("containerClass");
+                    //containerBack.style.background="blue";
+                    var container2 = document.getElementById("container2Class");
+                    //container2.style.backgroundImage = "";
+                    container2.style.backgroundImage = "url('../images/projects/memorygame/foodsblur.png')";
+                    container2.style.backgroundSize = "100%"; //90%
+                    //container2.style.backgroundImage.filter="blur(5px)";
+                    var progress = document.getElementById("myProgress");
+                    progress.remove();
+
+                    var gContainer = document.createElement("div");
+                    gContainer.id = "gameContainer";
+                    var rlogo = document.createElement("div");
+                    rlogo.id = "rowlogo";
+                    var logo = document.createElement("div");
+                    logo.id = "cell";
+                    var rnav = document.createElement("div");
+                    rnav.id = "rownav";
+                    var nav = document.createElement("div");
+                    nav.id = "cell";
+                    var rbase = document.createElement("div");
+                    rbase.id = "rowbase";
+                    var base = document.createElement("div");
+                    base.id = "cell";
+                    var inputSection = document.createElement("div");
+                    inputSection.class = "form-horizontal";
+                    inputSection.id = "iSection";
+                    var inputBar = document.createElement("input");
+                    inputBar.id = "inputText"
+                    inputBar.setAttribute('placeholder', "Type Here...");
+                    inputBar.setAttribute('autofocus', "autofocus");
+                    var inputButton = document.createElement("input");
+                    inputButton.class = "btn";
+                    inputButton.id = "enterButton";
+                    inputButton.setAttribute('type', 'button');
+                    inputButton.setAttribute('name', 'Enter');
+                    inputButton.setAttribute('value', 'Enter');
+                    //Creating the timer
+                    var timeDiv = document.createElement("div");
+                    timeDiv.innerHTML = "--";
+                    timeDiv.id = "timer";
+                    logo.appendChild(timeDiv);
+                    //creating answers guessed
+                    var answersDiv = document.createElement("div");
+                    answersDiv.id = "answers";
+                    answersDiv.class = "form-horizontal";
+                    var answersUl = document.createElement("ul");
+                    answersUl.id = "answersUL";
+                    answersDiv.appendChild(answersUl);
+                    base.appendChild(answersDiv);
+                    inputSection.appendChild(inputBar);
+                    inputSection.appendChild(inputButton);
+                    nav.appendChild(inputSection);
+                    rlogo.appendChild(logo);
+                    rnav.appendChild(nav);
+                    rbase.appendChild(base);
+                    gContainer.appendChild(rlogo);
+                    gContainer.appendChild(rnav);
+                    gContainer.appendChild(rbase);
+                    container2.appendChild(gContainer);
+                    //ADDING CORRECT TO BOTTOM
+                    document.getElementById("enterButton").addEventListener("click", function() {
+                        //console.log("Heeeello");
+                        var node = document.createElement("li");
+                        node.id = "listItem";
+                        var textnode = document.createTextNode(document.getElementById("inputText").value);
+                        var theval = document.getElementById("inputText").value;
+                        var val = theval.toLowerCase();
+                        //change val to lower case
+                        if (val == "pizza" || val == "apple" || val == "banana" || val == "coconut" || val == "cupcake" || val == "egg" ||
+                            val == "fish" || val == "hotdog" || val == "ice cream" || val == "pizza" || val == "sushi") {
+                            node.appendChild(textnode);
+                            document.getElementById("answersUL").appendChild(node);
+                        }
+                        document.getElementById("inputText").value = "";
+                    })
+                    inputBar.addEventListener("keyup", function(event) {
+                        event.preventDefault();
+                        if (event.keyCode === 13) {
+                            var node = document.createElement("li");
+                            node.id = "listItem";
+                            var textnode = document.createTextNode(document.getElementById("inputText").value);
+                            console.log(cakebool);
+                            console.log(canList);
+                            inputBar.setAttribute('placeholder', "");
+
+                            var theval = document.getElementById("inputText").value;
+                            val = theval.toLowerCase();
+                            if ((val == "cup cake" || val == "cupcake") && cakebool == 0) {
+                                score++;
+                                //  canList = 0;
+                                val = "• cupcake";
+                                cakebool = 1;
+                                textnode = document.createTextNode(val);
+                                node.appendChild(textnode);
+                                document.getElementById("answersUL").appendChild(node);
+                                correctAns();
+                            } else if ((val == "hot dog" || val == "hotdog") && hotdogbool == 0) {
+                                score++;
+                                val = "• hot dog";
+                                hotdogbool = 1;
+                                textnode = document.createTextNode(val);
+                                node.appendChild(textnode);
+                                document.getElementById("answersUL").appendChild(node);
+                                correctAns();
+                            } else if ((val == "icecream" || val == "ice cream") && icecreambool == 0) {
+                                score++;
+                                val = "• ice cream";
+                                icecreambool = 1;
+                                textnode = document.createTextNode(val);
+                                node.appendChild(textnode);
+                                document.getElementById("answersUL").appendChild(node);
+                                correctAns();
+                            } else if ((val == "pizza") && pizzabool == 0) {
+                                score++;
+                                val = "• pizza";
+                                pizzabool = 1;
+                                textnode = document.createTextNode(val);
+                                node.appendChild(textnode);
+                                document.getElementById("answersUL").appendChild(node);
+                                correctAns();
+                            } else if ((val == "apple") && applebool == 0) {
+                                score++;
+                                val = "• apple";
+                                applebool = 1;
+                                textnode = document.createTextNode(val);
+                                node.appendChild(textnode);
+                                document.getElementById("answersUL").appendChild(node);
+                                correctAns();
+                            } else if ((val == "banana") && bananabool == 0) {
+                                score++;
+                                val = "• banana";
+                                bananabool = 1;
+                                textnode = document.createTextNode(val);
+                                node.appendChild(textnode);
+                                document.getElementById("answersUL").appendChild(node);
+                                correctAns();
+                            } else if ((val == "coconut") && coconutbool == 0) {
+                                score++;
+                                val = "• coconut";
+                                coconutbool = 1;
+                                textnode = document.createTextNode(val);
+                                node.appendChild(textnode);
+                                document.getElementById("answersUL").appendChild(node);
+                                correctAns();
+                            } else if ((val == "egg") && eggbool == 0) {
+                                score++;
+                                val = "• egg";
+                                eggbool = 1;
+                                textnode = document.createTextNode(val);
+                                node.appendChild(textnode);
+                                document.getElementById("answersUL").appendChild(node);
+                                correctAns();
+                            } else if ((val == "fish") && fishbool == 0) {
+                                score++;
+                                val = "• fish";
+                                fishbool = 1;
+                                textnode = document.createTextNode(val);
+                                node.appendChild(textnode);
+                                document.getElementById("answersUL").appendChild(node);
+                                correctAns();
+                            } else if ((val == "sushi") && sushibool == 0) {
+                                score++;
+                                val = "• sushi";
+                                sushibool = 1;
+                                textnode = document.createTextNode(val);
+                                node.appendChild(textnode);
+                                document.getElementById("answersUL").appendChild(node);
+                                correctAns();
+                            } else {
+                                inputBar.style.background = "#841e1e";
+
+                                inputBar.style.webkitTransition = "background 500ms linear";
+                                inputBar.style.msTransition = "background 500ms linear";
+                                inputBar.style.transition = "background 500ms linear";
+
+                                setTimeout(function() {
+                                    inputBar.style.background = "white";
+                                    inputBar.style.webkitTransition = "background 500ms linear";
+                                    inputBar.style.msTransition = "background 500ms linear";
+                                    inputBar.style.transition = "background 500ms linear";
+                                }, 200);
+                            }
+                            document.getElementById("inputText").value = ""
+                        }
+                    })
+
+                    function correctAns() {
+                        inputBar.style.background = "#028c2e";
+
+                        inputBar.style.webkitTransition = "background 500ms linear";
+                        inputBar.style.msTransition = "background 500ms linear";
+                        inputBar.style.transition = "background 500ms linear";
+                        setTimeout(function() {
+                            inputBar.style.background = "white";
+
+                            inputBar.style.webkitTransition = "background 500ms linear";
+                            inputBar.style.msTransition = "background 500ms linear";
+                            inputBar.style.transition = "background 500ms linear";
+                        }, 200);
+
+                    }
+
+                    var timeLeft = 30;
+                    var elem = document.getElementById('timer');
+                    var timerId = setInterval(countdown, 1000);
+
+                    function countdown() {
+
+                        if (timeLeft == -1 || (cakebool == 1 && icecreambool == 1 && hotdogbool == 1 && pizzabool == 1 && applebool == 1 &&
+                                bananabool == 1 && coconutbool == 1 && eggbool == 1 && fishbool == 1 & sushibool == 1)) {
+                            clearTimeout(timerId);
+                            doSomething();
+                        } else {
+                            elem.innerHTML = timeLeft;
+                            timeLeft--;
+                        }
+                    }
+
+                    function doSomething() {
+                        var inputBar = document.getElementById("inputText");
+                        var inputButton = document.getElementById("enterButton");
+                        inputBar.remove();
+                        inputButton.remove();
+                        var inputSection = document.getElementById("iSection");
+                        timeDiv.innerHTML = "You Got " + (score / 10) * 100 + "%";
+                        timeDiv.id = "score";
+                        var missedText = document.createElement("div");
+                        missedText.id = "mText";
+                        missedText.innerHTML = "Here's what you missed";
+                        var missedAns = document.createElement("div");
+                        missedAns.id = "mAns";
+                        var ulAns = document.createElement("ul");
+                        ulAns.id = "UlAnswers"
+                        if (cakebool == 0) {
+                            var cakeAns = document.createElement("li");
+                            cakeAns.innerHTML = "• cup cake";
+                            ulAns.appendChild(cakeAns);
+                        }
+                        if (icecreambool == 0) {
+                            var icecreamAns = document.createElement("li");
+                            icecreamAns.innerHTML = "• ice cream";
+                            ulAns.appendChild(icecreamAns);
+                        }
+                        if (hotdogbool == 0) {
+                            var hotdogAns = document.createElement("li");
+                            hotdogAns.innerHTML = "• hot dog";
+                            ulAns.appendChild(hotdogAns);
+                        }
+                        if (pizzabool == 0) {
+                            var pizzaAns = document.createElement("li");
+                            pizzaAns.innerHTML = "• pizza";
+                            ulAns.appendChild(pizzaAns);
+                        }
+                        if (applebool == 0) {
+                            var appleAns = document.createElement("li");
+                            appleAns.innerHTML = "• apple";
+                            ulAns.appendChild(appleAns);
+                        }
+                        if (bananabool == 0) {
+                            var bananaAns = document.createElement("li");
+                            bananaAns.innerHTML = "• banana";
+                            ulAns.appendChild(bananaAns);
+                        }
+                        if (coconutbool == 0) {
+                            var coconutAns = document.createElement("li");
+                            coconutAns.innerHTML = "• coconut";
+                            ulAns.appendChild(coconutAns);
+                        }
+                        if (eggbool == 0) {
+                            var eggAns = document.createElement("li");
+                            eggAns.innerHTML = "• egg";
+                            ulAns.appendChild(eggAns);
+                        }
+                        if (fishbool == 0) {
+                            var fishAns = document.createElement("li");
+                            fishAns.innerHTML = "• fish";
+                            ulAns.appendChild(fishAns);
+                        }
+                        if (sushibool == 0) {
+                            var sushiAns = document.createElement("li");
+                            sushiAns.innerHTML = "• sushi";
+                            ulAns.appendChild(sushiAns);
+                        }
+                        if (cakebool == 1 && icecreambool == 1 && hotdogbool == 1 && pizzabool == 1 && applebool == 1 &&
+                            bananabool == 1 && coconutbool == 1 && eggbool == 1 && fishbool == 1 & sushibool == 1) {
+                            missedText.innerHTML = "Congratulations";
+                            var perfectScore = document.createElement("div");
+                            perfectScore.id = "perfScore";
+                            perfectScore.innerHTML = "You got everything right";
+                        }
+                        missedAns.appendChild(ulAns);
+                        inputSection.appendChild(missedText);
+                        if (perfectScore != null) inputSection.appendChild(perfectScore);
+                        inputSection.appendChild(missedAns);
+
+                    }
+
+                }
+            </script>
+        </div>
+    </div>
+    <div class="gitgoogButtons" style="width:100%; text-align: center; margin-top: 15px;">
+        <button id="githubButton" style="padding: 15px">
+            <a href="https://github.com/SunnyZaman/Memorization-Game">
+                                                <i id="githubIcon" class="fab fa-github"></i>
+                                                </a>
+    </button>
+    </div>
+    <div class="container-fluid padding" style="padding-left: 50px; padding-right: 50px; margin-bottom: -90px; margin-top: 15px;">
+        <div class="row padding">
+            <div class="col-lg-12">
+                <p> The Memorization game is a game to test your short-term memory. You will have a short amount of time to memorize images of random food. Then you will only have thirty seconds to name everything you saw from memory alone. </p>
+            </div>
+        </div>
+    </div>
+    <!--Footer-->
+    <footer style="margin-top: 30px">
+        <div class="container-fluid padding">
+            <div class="row text-center">
+                <div class="col-md-4">
+                    <a href="http://SunnyZaman.github.io">
+                    <img src="../images/logo.png">
+                    </a>
+                    <hr class="light">
+                    <p>sunnyjozaman@gmail.com</p>
+                </div>
+                <div class="col-md-4">
+                    <hr class="light">
+                    <h5>Affiliations</h5>
+                    <hr class="light">
+                    <p>Ryerson University</p>
+
+                </div>
+
+                <div class="col-md-4">
+                    <hr class="light">
+                    <h5>Location</h5>
+                    <hr class="light">
+                    <p>350 Victoria St, Toronto, ON M5B 2K3</p>
+
+                </div>
+                <div class="col-12">
+                    <hr class="light-100">
+                    <h5>&copy SunnyZaman.github.io</h5>
+                </div>
+            </div>
+
+        </div>
+
+    </footer>
+</body>
+
+</html>
