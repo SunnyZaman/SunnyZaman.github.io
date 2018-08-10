@@ -1,11 +1,12 @@
 .accordion .card-header:after {
     font-family: 'FontAwesome';
-    content: "\f068";
+    content: "-";
+    font-weight:bold;
     float: right;
 }
 
 .accordion .card-header.collapsed:after {
-    content: "\f067";
+    content: "+";
 }
 
 
