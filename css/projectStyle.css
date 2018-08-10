@@ -3,7 +3,7 @@
     float: right;
 }
 
-.accordion .card-header.collapsed::before {
+.accordion .card-header::before {
     content: "-";
 }
 
