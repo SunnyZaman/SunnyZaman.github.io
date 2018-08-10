@@ -1,9 +1,11 @@
 .accordion .card-header:after {
-    content: "-";
+    content: "+";
+    font-family: 'FontAwesome';
+    float: right;
 }
 
 .accordion .card-header.collapsed:after {
-    content: "+";
+    content: "-";
 }
 
 
