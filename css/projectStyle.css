@@ -1,6 +1,6 @@
 .accordion .card-header:before {
-    content: "-";
     float: right;
+    content: "+";
 }
 
 .accordion .card-header .collapsed:before {
